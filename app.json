@@ -1,7 +1,7 @@
 {
-  "name": "Flicks-Userbot",
-  "description": "[Ficks-Userbot] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERMAIN DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/62e4919abb9c9dd7c0310.jpg",
+  "name": "Userbot-Telegram",
+  "description": "[Userbot-Telegram] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERMAIN DI TELEGRAM",
+  "logo": "https://telegra.ph/file/1befa9a7fb71f45a94972.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/fjgaming212/Flicks-Userbot",
-  "telegram": "https://t.me/FJ_GAMING",
-  "success_url": "https://t.me/FlicksSupport",
+  "repository": "https://github.com/apisuserbot/Userbot-Telegram",
+  "telegram": "https://t.me/ApisProject",
+  "success_url": "https://t.me/Circle_Muslim",
   "stack": "container",
   "env": {
     "API_KEY": {
