@@ -51,7 +51,7 @@ if CONSOLE_LOGGER_VERBOSE:
     )
 else:
     basicConfig(
-        format="✘ %(asctime)s ✘ - ⫸ %(name)s ⫷ - ⛝ %(levelname)s ⛝ - ║ %(message)s ║",
+        format="• %(asctime)s • - >> %(name)s << - ⛝ %(levelname)s ⛝ - ║ %(message)s ║",
         level=INFO)
 LOGS = getLogger(__name__)
 
@@ -131,9 +131,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/fjgaming212/Flicks-Userbot")
+    "https://github.com/apisuserbot/Userbot-Telegram")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Flicks-Userbot")
+    "UPSTREAM_REPO_BRANCH", "Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -206,7 +206,7 @@ YOUTUBE_API_KEY = os.environ.get(
 # Untuk Perintah .falive
 FLICKS_TEKS_KUSTOM = os.environ.get(
     "FLICKS_TEKS_KUSTOM",
-    "I'am Using Flicks-Userbot ✨")
+    "I'am Using Userbot 🤖")
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -226,10 +226,10 @@ BITLY_TOKEN = os.environ.get(
     "BITLY_TOKEN") or "o_1fpd9299vp"
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Flicks-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "5.1")
+BOT_VER = os.environ.get("BOT_VER", "0.1")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
