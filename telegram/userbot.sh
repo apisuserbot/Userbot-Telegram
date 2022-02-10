@@ -1,3 +1,5 @@
+# Kalo nge clone Jan ganti credit ya anjing
+#
 # ----------------------------DEPLOYING-HEROKU---------------------------------->
 
 
@@ -8,7 +10,7 @@ echo "
          T E L E G R A M
 
 
-                 Thanks
+                 Credit by @tzypis
 "
 
 python3 -m userbot
