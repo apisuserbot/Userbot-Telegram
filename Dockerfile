@@ -14,4 +14,4 @@ RUN pip3 install -r https://raw.githubusercontent.com/apisuserbot/Userbot-Telegr
 EXPOSE 80 443
 
 # Finalization
-CMD ["python3", "-m", "userbot"]
+CMD ["bash","./telegram/userbot.sh"]
