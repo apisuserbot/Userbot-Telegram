@@ -36,7 +36,7 @@ for module_name in ALL_MODULES:
     LOGS.info(f"Telethon Version - {version.__version__}")
     LOGS.info(f"Userbot Version - {BOT_VER}")
     LOGS.info(
-        f"\n✘ Userbot-Telegram ✘ [Berhasil Diaktifkan 🔥]")
+        f"\n• Userbot-Telegram • [Berhasil Diaktifkan 🤖]")
 
 
 
