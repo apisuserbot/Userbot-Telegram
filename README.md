@@ -15,3 +15,6 @@
   </details><br>
 </details>
 
+## Credit Repository 
+
+*   [Flicks-Userbot](https://github.com/fjgaming212/Flicks-Userbot)
