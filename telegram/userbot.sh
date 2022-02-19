@@ -1,5 +1,3 @@
-# Kalo nge clone Jan ganti credit ya anjing
-#
 # ----------------------------DEPLOYING-HEROKU---------------------------------->
 
 
