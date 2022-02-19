@@ -243,15 +243,15 @@ ALIVE_LOGO = os.environ.get(
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/e950cf06924c4e090d513.jpg"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/248488c756b72d602eff7.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/248488c756b72d602eff7.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "Flicks-Userbot ✨")
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "• Userbot Telegram •")
 
 LASTFM_API = os.environ.get(
     "LASTFM_API") or "73d42d9c93626709dc2679d491d472bf"
@@ -443,8 +443,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} ✥".format(
-                "✥", x), data="ub_modul_{}".format(x))
+            "{} {} •".format(
+                "•", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -462,7 +462,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "««", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "Cʟᴏsᴇ", data="{}_close({})".format(prefix, modulo_page)
+                    "Tutup", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "»»", data="{}_next({})".format(prefix, modulo_page)
@@ -518,7 +518,7 @@ with bot:
                     if BOTLOG:
                         await event.client.send_message(
                             BOTLOG_CHATID,
-                            f"**ERROR:** Saat menyimpan detail pesan di database\n`{str(e)}`",
+                            f"**ERROR :** Saat menyimpan detail pesan di database\n`{str(e)}`",
                         )
             else:
                 if event.text.startswith("/"):
@@ -552,10 +552,10 @@ with bot:
                             )
                     except UserIsBlockedError:
                         return await event.reply(
-                            "❌ **Bot ini diblokir oleh pengguna.**"
+                            "❌ **Bot ini diblokir oleh pengguna**"
                         )
                     except Exception as e:
-                        return await event.reply(f"**ERROR:** `{e}`")
+                        return await event.reply(f"**ERROR :** `{e}`")
                     try:
                         add_user_to_db(
                             reply_to, user_name, user_id, reply_msg, event.id, msg.id
@@ -565,7 +565,7 @@ with bot:
                         if BOTLOG:
                             await event.client.send_message(
                                 BOTLOG_CHATID,
-                                f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
+                                f"**ERROR :** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
                 
@@ -574,17 +574,13 @@ with bot:
             await event.edit(f"""
 Owner - {ALIVE_NAME}
 OwnerID - {uid}
-[Link To Profile 👤](tg://user?id={uid})
-
-Owner repo - [Fariz](tg://openmessage?user_id=1514078508)
-Support - @FlicksSupport
-Flicks-Userbot [v{BOT_VER}](https://github.com/fjgaming212/Flicks-Userbot)
+[Link Ke Profile 👤](tg://user?id={uid})
 """,
                              buttons=[
                                  [
-                                     custom.Button.inline("ᴄʟᴏsᴇ",
+                                     custom.Button.inline("Tutup",
                                                           data="keluar"),
-                                     custom.Button.inline("ʙᴀᴄᴋ​",
+                                     custom.Button.inline("Kembali",
                                                           data="pesanstart")],
                              ]
                              )
@@ -611,20 +607,20 @@ Perintah yang tersedia di bot ini :
         @tgbot.on(events.CallbackQuery(data=b"pesanstart"))
         async def pesanstart(event):
             await event.edit(
-                f"Hallo [👋](https://telegra.ph/file/296869330db1dec4e76e2.jpg)\n"
-                f"Selamat Datang Di **Flicks Userbot**\n"
-                f"Saya Assisten bot {ALIVE_NAME}\n"
-                f"Tekan tombol » ɪɴꜰᴏ​ «\n"
+                f"Hallo [👋🏻](https://telegra.ph/file/248488c756b72d602eff7.jpg)\n"
+                f"Selamat Datang Di **Userbot Telegram**\n"
+                f"Saya Assisten bot {ALIVE_NAME}\n\n"
+                f"Tekan tombol » Info​ «\n"
                 f"Untuk info lebih lanjut\n"
                 f"Terimakasih\n",
                 buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
-                            custom.Button.inline("ɪɴꜰᴏ​",
+                                       "https://github.com/apisuserbot/Userbot-Telegram"),
+                            custom.Button.inline("Info",
                                                  data="about")],
                         [custom.Button.inline(
-                            "ʜᴇʟᴘ",
+                            "Help",
                             data="help")],
                 ]
             )
@@ -641,13 +637,13 @@ Perintah yang tersedia di bot ini :
                     f"👋🏻 Hai [{get_display_name(u)}](tg://user?id={u.id}) Jika anda\n"
                     f"Ingin melihat repository ini dan Cara deploynya\n\n"
                     f"👇🏻 __Klik button url di bawah ini__ 👇🏻\n\n"
-                    f"**FLICKS USERBOT**\n",
+                    f"**USERBOT TELEGRAM**\n",
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/apisuserbot/Userbot-Telegram"),
                             Button.url("Tutorial",
-                                       "https://t.me/InfoFlicksUserbot/64")],
+                                       "https://t.me/UserbotTelegramSupport")],
                     ]
                 )
 
@@ -657,30 +653,30 @@ Perintah yang tersedia di bot ini :
                 u = await event.client.get_entity(event.chat_id)
                 await event.message.get_sender()
                 text = (
-                    f"**Hello** [{get_display_name(u)}](tg://user?id={u.id}) **Is Its Alive Bot**\n\n"
-                    f"         ✘ 𝐅𝐥𝐢𝐜𝐤𝐬-𝐔𝐬𝐞𝐫𝐛𝐨𝐭 ✘ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
-                    f"          I'ᴍ Aʟɪᴠᴇ​ ✨ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
+                    f"**Hallo** [{get_display_name(u)}](tg://user?id={u.id}) **Alive Bot Ini**\n\n"
+                    f"         • **Userbot Telegram** • \n"
+                    "•••••••••••••••••••••••••• \n"
+                    f"          Alive \n"
+                    "•••••••••••••••••••••••••• \n"
                     f"`Pengguna  :` [{get_display_name(u)}](tg://user?id={u.id}) \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi     :` {BOT_VER} \n"
                     f"`Bahasa    :` Python \n"
                     f"`Database  :` Mongo db \n"
                     f"`Owner     :` {DEFAULTUSER} \n\n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ \n"
-                    f"       Tᴇʟᴇɢʀᴀᴍ Usᴇʀʙᴏᴛ \n"
-                    "▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱")
+                    "•••••••••••••••••••••••••••• \n"
+                    f"       Alive Userbot \n"
+                    "••••••••••••••••••••••••••••")
                 await tgbot.send_file(event.chat_id, file=logo,
                                           caption=text,
                                           buttons=[
                                               [
                                                   custom.Button.url(
-                                                      text="Rᴇᴘᴏ",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot"),
+                                                      text="Repository",
+                                                      url="https://github.com/apisuserbot/Userbot-Telegram"),
                                                   custom.Button.url(
-                                                      text="Lɪsᴇɴsɪ​",
-                                                      url="https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE"
+                                                      text="License",
+                                                      url="https://github.com/apisuserbot/Userbot-Telegram/blob/Userbot/LICENSE"
                                                   )
                                               ]
                                           ]
@@ -691,17 +687,17 @@ Perintah yang tersedia di bot ini :
             if event.message.from_id != uid:
                 reply = "**STRING SESSION**"
                 await event.reply(
-                    f"**Hai Kamu!**\n\n"
+                    f"**Hai Kamu !**\n\n"
                     f"Ingin Mengambil String Session?\n\n"
                     f"Cukup Ambil Dibawah Button URL Ini\n\n"
-                    f"[⚠️](https://telegra.ph/file/32abc8853f19f9abf90e2.jpg) **Gunakan String Session Dengan Bijak!!**\n\n"
+                    f"[⚠️](https://telegra.ph/file/32abc8853f19f9abf90e2.jpg) **Gunakan String Session Dengan Bijak!**\n\n"
                     f"{reply}\n",
                     buttons=[
                         [
                             Button.url("Dengan Web",
-                                       "https://replit.com/@fjgaming212/StringSession#main.py"),
+                                       "https://replit.com/@ApisQurthubi/String-Session#main.py"),
                             Button.url("Dengan Bot",
-                                       "https://t.me/StringSessionFlicksbot")],
+                                       "https://t.me/StringSesionTelegramBot")],
                     ]
                 )
 
@@ -726,7 +722,7 @@ Perintah yang tersedia di bot ini :
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
             buttons = paginate_help(current_page_number, plugins, "helpme")
-            text = f"\n**Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ​**\n\n **Mᴀsᴛᴇʀ​** {DEFAULTUSER}\n\n** Bʀᴀɴᴄʜ :** Flicks-Userbot\n** Vᴇʀsɪ :** `v{BOT_VER}`\n** Pʟᴜɢɪɴs :** `{len(plugins)}`\n"
+            text = f"\n**Userbot Telegram​**\n\n **Owner​** {DEFAULTUSER}\n\n** Branch :** Userbot-Telegram\n** Versi :** `v{BOT_VER}`\n** Plugins :** `{len(plugins)}`\n"
             await event.edit(
                 text,
                 file=flickslogo,
@@ -745,7 +741,7 @@ Perintah yang tersedia di bot ini :
                 result = builder.photo(
                     file=flickslogo,
                     link_preview=False,
-                    text=f"\n**Flicks-Userbot**\n\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n\n✥**ʙʀᴀɴᴄʜ :** Flicks-Userbot\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}".format(
+                    text=f"\n**Userbot-Telegram**\n\n**Owner​** {ALIVE_NAME}\n\n**Branch :** Userbot-Telegram\n**Versi :** {BOT_VER}\n**Plugins** : {len(plugins)}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -754,29 +750,29 @@ Perintah yang tersedia di bot ini :
                 result = builder.article(
                     "Flicks-Userbot ",
                     text=f"""
-[⁣]({ALIVE_LOGO})**The Flicks Userbot**
+[⁣]({ALIVE_LOGO})**Userbot-Telegram**
 {FLICKS_TEKS_KUSTOM}
 ┏━━━━━━━━━━━━━━━━━━━
-┣  **Master**   : {ALIVE_NAME}
+┣  **Owner**   : {ALIVE_NAME}
 ┣  **Telethon** :` 1.24.0 `
 ┣  **Bahasa**   : `Python`
 ┣  **Branch**   :` {UPSTREAM_REPO_BRANCH} `
 ┣  **Bot Ver**  :` v.{BOT_VER} `
-┣  **Modules**  :` {len(plugins)} Modules `
-┣  **Support**  : @FlicksSupport
+┣  **Plugins**  :` {len(plugins)} plugin `
+┣  **Support**  : @UserbotTelegramSupport
 ┗━━━━━━━━━━━━━━━━━━━
 """,
                     buttons=[
                         [
                             custom.Button.url(
-                                "ᴅᴇᴘʟᴏʏ​",
-                                "https://heroku.com/deploy?template=https://github.com/fjgaming212/Deploy-FlicksUbot"),
+                                "De",
+                                "https://heroku.com/deploy?template=https://github.com/apisuserbot/Deploy-Userbot"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/fjgaming212/Flicks-Userbot")],
+                                "Repository",
+                                "https://github.com/apisuserbot/Userbot-Telegram")],
                         [custom.Button.url(
-                            "ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ​",
-                            "t.me/InfoFlicksUserbot")]],
+                            "Support Channel​",
+                            "https://t.me/UserbotTelegramChannel")]],
                     link_preview=True)
             elif query.startswith("Inline buttons"):
                 markdown_note = query[14:]
@@ -812,19 +808,19 @@ Perintah yang tersedia di bot ini :
                 )
             else:
                 result = builder.article(
-                    " ✘ Flicks-Userbot ✘",
-                    text=f"""**Flicks-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✥**Mᴀsᴛᴇʀ​** {ALIVE_NAME}\n✥**Vᴇʀsɪ :** {BOT_VER}\n✥**Plugin** : {len(plugins)}\n✥**ᴀssɪsᴛᴇɴ :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
+                    " • Userbot-Telegram •",
+                    text=f"""**Userbot-Telegram**\n➖➖➖➖➖➖➖➖➖➖\n**Owner​** {ALIVE_NAME}\n**Versi :** {BOT_VER}\n**Plugin** : {len(plugins)}\n**Assisten :** @{BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖[➖]({ALIVE_LOGO})""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "sᴜᴘᴘᴏʀᴛ",
-                                "t.me/FlicksSupport"),
+                                "Support",
+                                "t.me/UserbotTelegramSupport"),
                             custom.Button.url(
-                                "ᴄʜᴀɴɴᴇʟ​​",
-                                "t.me/InfoFlicksUserbot")],
+                                "Channel",
+                                "https://t.me/UserbotTelegramChannel")],
                         [custom.Button.url(
-                            "ʀᴇᴘᴏ",
-                            "https://github.com/fjgaming212/Flicks-Userbot")]],
+                            "Repository",
+                            "https://github.com/apisuserbot/Userbot-Telegram")]],
                     link_preview=True,
                 )
             await event.answer(
@@ -863,11 +859,11 @@ Perintah yang tersedia di bot ini :
                         [
                             custom.Button.inline("Alive",
                                                  data="alive_inline"),
-                            custom.Button.inline("Flicks",
+                            custom.Button.inline("Userbot",
                                                  data="flicks_inline")],
-                        [Button.inline("Oᴘᴇɴ Mᴇɴᴜ", data="open")],
+                        [Button.inline("Menu Buka", data="open")],
                         [custom.Button.inline(
-                            "Cʟᴏsᴇ", b"close")],
+                            "Tutup", b"close")],
                     ]
                 )
 
@@ -883,7 +879,7 @@ Perintah yang tersedia di bot ini :
                     "============================\n"
                     f"      **Alive Inline** \n"
                     "============================\n"
-                    f"`Master    :` {DEFAULTUSER} \n"
+                    f"`Owner    :` {DEFAULTUSER} \n"
                     f"`Branch    :` {UPSTREAM_REPO_BRANCH} \n"
                     f"`Versi Bot :` {BOT_VER} \n"
                     f"`Plugins   :` {len(plugins)} \n"
@@ -899,9 +895,9 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/apisuserbot/Userbot-Telegram"),
                             Button.url("License",
-                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                                       "https://github.com/apisuserbot/Userbot-Telegram/blob/Userbot/LICENSE")],
                         [custom.Button.inline(
                             "⬅️ Kembali", data="open")],
                     ]
@@ -923,14 +919,14 @@ Perintah yang tersedia di bot ini :
                     f"█░║║║╠─║─║─║║║║║╠─░█\n"
                     "█░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░█\n"
                     f"█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n"
-                    f"Flicks-Userbot versi {BOT_VER} berjalan\n"
-                    f"master {ALIVE_NAME}\n"
+                    f"Userbot Telegram versi {BOT_VER} berjalan\n"
+                    f"Owner {ALIVE_NAME}\n"
                     f"Selamat bersenang-senang dengan saya\n"
                     f"Anda dapat memberi tahu orang lain\n"
                     f"cara membuat userbot dengan `{CMD_HANDLER}tutorial`\n"
                     "Terimakasih\n"
-                    f"Support : @FlicksSupport\n"
-                    "Channel : @InfoFlicksUserbot")
+                    f"Support : @UserbotTelegramSupport\n"
+                    "Channel : @UserbotTelegramChannel")
                 await event.edit(
                     text,
                     file=flickslogo,
@@ -938,9 +934,9 @@ Perintah yang tersedia di bot ini :
                     buttons=[
                         [
                             Button.url("Repository",
-                                       "https://github.com/fjgaming212/Flicks-Userbot"),
+                                       "https://github.com/apisuserbot/Userbot-Telegram"),
                             Button.url("License",
-                                       "https://github.com/fjgaming212/Flicks-Userbot/blob/Flicks-Userbot/LICENSE")],
+                                       "https://github.com/apisuserbot/Userbot-Telegram/blob/Userbot/LICENSE")],
                         [custom.Button.inline(
                             "⬅️ Kembali", data="open")],
                     ]
@@ -952,9 +948,9 @@ Perintah yang tersedia di bot ini :
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("Bᴜᴋᴀ Mᴇɴᴜ", data="open"),),
+                (custom.Button.inline("Menu Buka", data="open"),),
             ]
-            await event.edit("**Mᴇɴᴜ Dɪᴛᴜᴛᴜᴘ​!**", file=flickslogo, buttons=buttons)
+            await event.edit("**MEni Ditutup​!**", file=flickslogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
