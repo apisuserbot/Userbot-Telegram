@@ -239,7 +239,7 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/808a9f8f047f9a7e67050.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/15d80494348be2a94d591.jpg"
 
 # Default pmpermit logo
 PMPERMIT_PIC = os.environ.get(
@@ -398,12 +398,12 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variable isn't a "
-            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan.")
+            "BOTLOG_CHATID yang anda masukan tidak valid, silahkan periksa variabel yang anda masukan")
         quit(1)
 
 
 async def check_alive():
-    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**Flicks Userbot Telah diaktifkan ✨**\n\n✥ Master : {ALIVE_NAME}\n✥ Botver : {BOT_VER}\n✥ Support: @FlicksSupport")
+    await bot.send_file(BOTLOG_CHATID, ALIVE_LOGO, caption=f"**• Userbot Telegram •** ```Telah Aktif```\n\n• Owner : {ALIVE_NAME}\n• Botver : {BOT_VER}\n• Support : @UserbotTelegramSupport\n\n__Terimakasih kepada pengguna yang sudah mau pasang repository ini__ 😊")
     return
 
 with bot:
@@ -412,7 +412,7 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "valid entity. Check your environment variables/config.env file")
         quit(1)
 
 # =================================GlobalVariables=================================== #
